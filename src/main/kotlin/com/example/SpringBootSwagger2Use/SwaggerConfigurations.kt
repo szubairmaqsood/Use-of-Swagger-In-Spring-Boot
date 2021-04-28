@@ -30,7 +30,7 @@ class SwaggerConfigurations {
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.SpringBootSwagger2Use.controllers"))
-                .paths(regex("/product.*"))
+                .paths(regex("/Product.*"))
                 .build()
 
     }
