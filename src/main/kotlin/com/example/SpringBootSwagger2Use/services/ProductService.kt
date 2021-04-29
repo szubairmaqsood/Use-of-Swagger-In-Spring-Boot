@@ -38,7 +38,7 @@ class ProductService {
     fun addProduct(product:Product):ResponseEntity<Product>{
 
         productRepository.saveAndFlush(product)
-       return  ResponseEntity(product,HttpStatus.OK)
+       return  ResponseEntity(product,HttpStatus.CREATED)
     }
 
     fun DeleteProduct(id:Int): ResponseEntity<String> {
@@ -48,7 +48,7 @@ class ProductService {
             return ResponseEntity("The product with id " + id.toString()  + " deleted successfully",HttpStatus.OK)
         }
         else{
-            return ResponseEntity("The product with id " + id.toString()  + " does not exist",HttpStatus.BAD_REQUEST)
+            return ResponseEntity("The product with id " + id.toString()  + " does not exist",HttpStatus.NOT_FOUND)
         }
 
 
@@ -65,7 +65,7 @@ class ProductService {
             return ResponseEntity(product1,HttpStatus.OK)
         }
         else{
-            return ResponseEntity.badRequest().build()
+            return ResponseEntity.notFound().build()
         }
     }
 
