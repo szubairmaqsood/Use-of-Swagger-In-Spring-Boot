@@ -22,6 +22,11 @@ class ProductController {
         this.productService= productService
     }
 
+    @GetMapping("/")
+    fun Root():String{
+        return "This is server root"
+    }
+
     @GetMapping("/list")
     @ApiOperation(value = "View a list of available products")
     @ApiResponses(
